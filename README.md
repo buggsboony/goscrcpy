@@ -1,0 +1,2 @@
+# goscrcpy
+Launcher for scrcpy
