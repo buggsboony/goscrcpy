@@ -1,0 +1,15 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=true
+Name=goscrcpy (launcher)
+Comment=Lancer scrcpy avec 2 tcpip potentiels
+#Path=HOME_PATH/somewhere
+Exec=bash -c "/usr/bin/goscrcpy 192.168.0.xx:555x 192.168.0.yy:555x"
+#Exec=bash -c "kate truculent"
+Icon=/usr/share/goscrcpy/icon.png
+Categories=Internet;Network;Utility
+StartupWMClass=goscrcpy-gui
+StartupNotify=true
+Keywords=adb;goscrcpy;scrcpy;téléphone;smartphone;remote;control
