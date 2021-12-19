@@ -13,8 +13,8 @@ LCYAN='\033[1;36m'
 NC='\033[0m' # No Color
 
 
-tcpip=192.168.0.76:5554
-tcpip2=192.168.0.77:5554
+tcpip=$1  #Something like:    192.168.0.xx:555x
+tcpip2=$2 #Something like:    192.168.0.yy:555x
 
 resp=$(adb connect $tcpip) 
 ### possible responses :
