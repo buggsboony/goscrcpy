@@ -11,23 +11,23 @@ LMAG='\033[1;35m'
 CYAN='\033[0;36m'
 LCYAN='\033[1;36m'
 NC='\033[0m' # No Color
-
-
+ 
+ 
 tcpip=$1  #Something like:    192.168.0.xx:555x
 tcpip2=$2 #Something like:    192.168.0.yy:555x
-
-resp=$(adb connect $tcpip) 
+ 
+resp=$(adb connect $tcpip)
 ### possible responses :
 #connected to '192.168.0.xx:555x': No route to host
 #failed to connect to '192.168.0.xx:555x': No route to host
 #already connected to 192.168.0.xx:555x
 printf "${CYAN} $resp  ${NC}\n"
-if [ "${resp:0:9}" = "connect" ] ; then
-    printf "${GREEN} scrcpy --tcpip=$tcpip ${NC}\n"
-    scrcpy --tcpip=$tcpip
+if [[ "${resp:0:9}" == "connected" || "${resp:0:17}" == "already connected" ]] ; then
+   printf "${GREEN} scrcpy --tcpip=$tcpip ${NC}\n"
+   scrcpy --tcpip=$tcpip
 else
 printf "${GREEN} scrcpy --tcpip=$tcpip2 ${NC}\n"
-    scrcpy --tcpip=$tcpip2
+   scrcpy --tcpip=$tcpip2
 fi
-
+ 
 #scrcpy --tcpip=$tcpip
